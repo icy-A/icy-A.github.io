@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Computer Network Review | icy</title>
+  <title itemprop="name">Hello World | icy</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -174,7 +174,7 @@
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      Computer Network Review</h1>
+      Hello World</h1>
       <p class="entry-census">
         <span>
           <a href="">
@@ -186,7 +186,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2022-6-9<span class="bull">
+        2022-5-21<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -200,19 +200,15 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <font size="6"><center><strong>计网复习</strong></center></font>  
-
-<h2>应用层</h2>  
-
-<p><strong>应用程序体系结构</strong>由应用程序研发者设计，规定了如何在各种端系统上组织该应用程序。两种主流体系结构：<font color="darkcyan">客户-服务器体系结构</font>、<font color="darkcyan">对等（P2P）体系结构</font>。</p>
-<font color="darkcyan">客户-服务器体系结构</font>中，配备大量主机的<ins>数据中心</ins>常用于创建强大的虚拟服务器。<br><font color="darkcyan">对等（P2P）体系结构</font>最引人入胜的特性之一是它们的<ins>自拓展性</ins><br><br>运行在多个端系统上的程序是通过<ins>进程</ins>进行通信的，在两个不同端系统上的进程通过跨越计算机网络交换<ins>报文</ins>而相互通信。<br><br>进程寻址需要<ins>主机的地址(IP地址)</ins>和<ins>在目的主机中指定接收进程的标识符(端口号)</ins><br><br><strong>套接字</strong>是同一台主机内<em>应用层</em>与<em>运输层</em>之间的接口。套接字又称API。开发者通过套接字对于运输层的控制仅限于：①选择运输层协议；②设定几个参数(如最大缓存和最大报文段长度)<br><br>无论TCP还是UDP都没有提供任何加密机制，因此因特网界研制了TCP加强版：<em>安全套接字层(SSL)</em><br><br><strong><font color="darkblue">应用层协议</font></strong> 定义了运行在不同端系统上的应用程序进程如何相互传递报文——<br>·交换的报文类型<br>·各种报文类型的语法<br>·字段的语义<br>·对报文进行响应的规则<br><br><br><h3>HTTP</h3><br><br><strong>Web</strong>页面是由对象构成的。<br>多数Web页面含有一个<strong>HTML</strong>基本文件。<br><strong>Web浏览器</strong>实现了HTTP的客户端，<strong>Web服务器</strong>实现了HTTP的服务器端(常见的有Apache，微软互联网信息服务器)<br><br><font color="darkcyan">HTTP定义了</font>Web客户向Web服务器请求Web页面的方式，以及服务器向客户发送Web页面的方式。<br><br>HTTP使用<ins>TCP</ins>作为它的支撑运输协议。HTTP服务器并不保存关于客户的任何信息(但cookie保存,cookie由客户端的浏览器生成并交由Web服务器的数据库记录)，因此HTTP协议是一个<ins>无状态协议</ins>。HTTP既能够使用<ins>非持续连接</ins>，也能够使用<ins>持续连接</ins>，这在HTTP中报文的Connection首部行中得以体现。<br><br><em>非持续连接</em>的缺点：①必须为每一个请求的对象建立和维护一个全新的连接（客户和服务器均要分配TCP缓冲区和保持TCP变量，这为服务器带来了严重的负担）；②每一个对象经受两倍RTT(往返时间)的交付时延<br><br><strong>Web缓存器</strong>也叫<strong>代理服务器</strong>，是能够代表初始Web服务器来满足HTTP请求的网络实体。Web服务器拥有自己的磁盘存储空间，并在其中存储最近请求过的对象的副本。<br>Web缓存器既是客户又是服务器。Web缓存器通常由ISP购买并安装。<br>部署Web缓存器①可以大大减少对客户请求的响应时间，特别是当客户与初始服务器之间的瓶颈带宽远低于客户与Web缓存器之间的瓶颈带宽时；②能够大大减少一个机构的接入链路到因特网的通信量（通过减少通信量，可不必急于增加带宽，因此降低了费用）。<br><ins>条件GET方法</ins>作为HTTP协议中的一种机制，允许Web缓存器证实它的对象是最新的。<br><br><br><h3>SMTP、POP3、IMAP</h3><br><br>因特网电子邮件系统主要组成部分为：<strong>用户代理</strong>、<strong>邮件服务器</strong>、<strong>简单邮件传输协议(SMTP)</strong>。<br><br>示意：<br>用户代理–SMTP/HTTP–&gt;邮件服务器–SMTP–&gt;邮件服务器–POP3/IMAP/HTTP–&gt;用户代理<br><br><br><h3>DNS</h3><br><br><strong>域名系统(DNS)</strong> 的主要任务是进行<ins>主机名到IP地址转换的服务</ins>。<br><strong>DNS</strong>是①一个由分层DNS服务器实现的分布式数据库②一个使得主机能够查询分布式数据库的应用层协议。<br>DNS运行在<font color="darkcyan">UDP协议</font>之上，使用53号端口。<br><br>DNS的<ins>分布式设计方案</ins>:<br><font size="4"><strong>根DNS服务器</strong>：全世界400多个，由13个组织管理。根名字服务器提供顶级域服务器的IP地址</font><br><font size="3"><strong>顶级域(DNS)服务器</strong>：如com、org、net、edu和gov，又如uk、cn。顶级域服务器提供权威DNS服务器的IP地址</font><br><font size="2"><strong>权威DNS服务器</strong>：在因特网上具有公共可访问主机的每个组织机构必须提供公共可访问的DNS记录，一个组织机构的权威DNS服务器收藏这些IP地址记录。一种方式是自己实现，另一种方式是付费使用。</font>
-
-<p>除此之外，还有<strong>本地DNS服务器</strong>。每个ISP都有一台本地DNS服务器，用户可通过访问端系统的网络状态窗口确定自身的本地DNS服务器IP地址（通常在同一局域网内）。</p>
-<p>请求主机对本地DNS服务器发出的查询是<strong>递归查询</strong>，本地DNS服务器向根DNS服务器、顶级域服务器、权威DNS服务器发出的查询是<strong>迭代查询</strong>。</p>
-<p><ins>为了改善时延性能并减少在因特网上到处传输的DNS报文数量</ins>，DNS广泛采用了<strong>DNS缓存技术</strong>。</p>
-<blockquote>
-<p>摘自黑皮书《计算机网络：自顶向下方法》，未完待续….</p>
-</blockquote>
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
         </div>
         <!-- .entry-content -->
@@ -244,7 +240,7 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/2022/06/12/踩坑记录/" rel="prev">
+            <a href="/2022/06/03/RecordOfAndroidDevelop/" rel="prev">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://mrpig.eu.org/1644991202536234.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://mrpig.eu.org/1644991202536234.png">
               </div>
@@ -252,7 +248,7 @@
               Previous Post</span>
               <div class="info">
                 <h3>
-                踩坑记录</h3>
+                Record Of Android Develop</h3>
                 <hr>
               </div>
             </a>
@@ -262,7 +258,7 @@
           
             <div class="post-nepre half next">
           
-            <a href="/2022/06/08/BlogOnAndroid/" rel="next">
+            <a href="/2022/05/21/init/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://mrpig.eu.org/1644991202536234.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://mrpig.eu.org/1644991202536234.png">
               </div>
@@ -270,7 +266,7 @@
               Next Post</span>
               <div class="info">
                 <h3>
-                Blog On Android</h3>
+                init</h3>
                 <hr>
               </div>
             </a>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>icy</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-05-21T03:56:53.439Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>icy</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2022/06/11/hello-world/"/>
+    <id>http://example.com/2022/06/11/hello-world/</id>
+    <published>2022-06-11T14:29:44.913Z</published>
+    <updated>2022-05-21T03:56:53.439Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Computer Network Review</title>
+    <link href="http://example.com/2022/06/09/ComputerNetworkReview/"/>
+    <id>http://example.com/2022/06/09/ComputerNetworkReview/</id>
+    <published>2022-06-09T15:08:59.000Z</published>
+    <updated>2022-06-11T15:39:59.247Z</updated>
+    
+    <content type="html"><![CDATA[<font size="6"><center><strong>计网复习</strong></center></font><br>## 应用层<br><strong>应用程序体系结构</strong>由应用程序研发者设计，规定了如何在各种端系统上组织该应用程序。两种主流体系结构：<font color="darkcyan">客户-服务器体系结构</font>、<font color="darkcyan">对等（P2P）体系结构</font>。<br><br><font color="darkcyan">客户-服务器体系结构</font>中，配备大量主机的<ins>数据中心</ins>常用于创建强大的虚拟服务器。<br><font color="darkcyan">对等（P2P）体系结构</font>最引人入胜的特性之一是它们的<ins>自拓展性</ins><br><br>运行在多个端系统上的程序是通过<ins>进程</ins>进行通信的，在两个不同端系统上的进程通过跨越计算机网络交换<ins>报文</ins>而相互通信。<br><br>进程寻址需要<ins>主机的地址(IP地址)</ins>和<ins>在目的主机中指定接收进程的标识符(端口号)</ins><br><br><strong>套接字</strong>是同一台主机内<em>应用层</em>与<em>运输层</em>之间的接口。套接字又称API。开发者通过套接字对于运输层的控制仅限于：①选择运输层协议；②设定几个参数(如最大缓存和最大报文段长度)<br><br>无论TCP还是UDP都没有提供任何加密机制，因此因特网界研制了TCP加强版：<em>安全套接字层(SSL)</em><br><br><strong><font color="darkblue">应用层协议</font></strong> 定义了运行在不同端系统上的应用程序进程如何相互传递报文——<br>·交换的报文类型<br>·各种报文类型的语法<br>·字段的语义<br>·对报文进行响应的规则<br><br>### HTTP<br><br><strong>Web</strong>页面是由对象构成的。<br>多数Web页面含有一个<strong>HTML</strong>基本文件。<br><strong>Web浏览器</strong>实现了HTTP的客户端，<strong>Web服务器</strong>实现了HTTP的服务器端(常见的有Apache，微软互联网信息服务器)<br><br><font color="darkcyan">HTTP定义了</font>Web客户向Web服务器请求Web页面的方式，以及服务器向客户发送Web页面的方式。<br><br>HTTP使用<ins>TCP</ins>作为它的支撑运输协议。HTTP服务器并不保存关于客户的任何信息(但cookie保存,cookie由客户端的浏览器生成并交由Web服务器的数据库记录)，因此HTTP协议是一个<ins>无状态协议</ins>。HTTP既能够使用<ins>非持续连接</ins>，也能够使用<ins>持续连接</ins>，这在HTTP中报文的Connection首部行中得以体现。<br><br><em>非持续连接</em>的缺点：①必须为每一个请求的对象建立和维护一个全新的连接（客户和服务器均要分配TCP缓冲区和保持TCP变量，这为服务器带来了严重的负担）；②每一个对象经受两倍RTT(往返时间)的交付时延<br><br><strong>Web缓存器</strong>也叫<strong>代理服务器</strong>，是能够代表初始Web服务器来满足HTTP请求的网络实体。Web服务器拥有自己的磁盘存储空间，并在其中存储最近请求过的对象的副本。<br>Web缓存器既是客户又是服务器。Web缓存器通常由ISP购买并安装。<br>部署Web缓存器①可以大大减少对客户请求的响应时间，特别是当客户与初始服务器之间的瓶颈带宽远低于客户与Web缓存器之间的瓶颈带宽时；②能够大大减少一个机构的接入链路到因特网的通信量（通过减少通信量，可不必急于增加带宽，因此降低了费用）。<br><ins>条件GET方法</ins>作为HTTP协议中的一种机制，允许Web缓存器证实它的对象是最新的。<br><br>### SMTP、POP3、IMAP<br><br>因特网电子邮件系统主要组成部分为：<strong>用户代理</strong>、<strong>邮件服务器</strong>、<strong>简单邮件传输协议(SMTP)</strong>。<br><br>示意：<br>用户代理–SMTP/HTTP–&gt;邮件服务器–SMTP–&gt;邮件服务器–POP3/IMAP/HTTP–&gt;用户代理<br><br>### DNS<br><br><strong>域名系统(DNS)</strong> 的主要任务是进行<ins>主机名到IP地址转换的服务</ins>。<br><strong>DNS</strong>是①一个由分层DNS服务器实现的分布式数据库②一个使得主机能够查询分布式数据库的应用层协议。<br>DNS运行在<font color="darkcyan">UDP协议</font>之上，使用53号端口。<br><br>DNS的<ins>分布式设计方案</ins>:<br><font size="4"><strong>根DNS服务器</strong>：全世界400多个，由13个组织管理。根名字服务器提供顶级域服务器的IP地址</font><br><font size="3"><strong>顶级域(DNS)服务器</strong>：如com、org、net、edu和gov，又如uk、cn。顶级域服务器提供权威DNS服务器的IP地址</font><br><font size="2"><strong>权威DNS服务器</strong>：在因特网上具有公共可访问主机的每个组织机构必须提供公共可访问的DNS记录，一个组织机构的权威DNS服务器收藏这些IP地址记录。一种方式是自己实现，另一种方式是付费使用。</font><p>除此之外，还有<strong>本地DNS服务器</strong>。每个ISP都有一台本地DNS服务器，用户可通过访问端系统的网络状态窗口确定自身的本地DNS服务器IP地址（通常在同一局域网内）。</p><p>请求主机对本地DNS服务器发出的查询是<strong>递归查询</strong>，本地DNS服务器向根DNS服务器、顶级域服务器、权威DNS服务器发出的查询是<strong>迭代查询</strong>。</p><p><ins>为了改善时延性能并减少在因特网上到处传输的DNS报文数量</ins>，DNS广泛采用了<strong>DNS缓存技术</strong>。</p><blockquote><p>摘自黑皮书《计算机网络：自顶向下方法》，未完待续….</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;font size=&quot;6&quot;&gt;&lt;center&gt;&lt;strong&gt;计网复习&lt;/strong&gt;&lt;/center&gt;&lt;/font&gt;&lt;br&gt;## 应用层&lt;br&gt;&lt;strong&gt;应用程序体系结构&lt;/strong&gt;由应用程序研发者设计，规定了如何在各种端系统上组织该应用程序。两种主流体系结构：&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Blog On Android</title>
+    <link href="http://example.com/2022/06/08/BlogOnAndroid/"/>
+    <id>http://example.com/2022/06/08/BlogOnAndroid/</id>
+    <published>2022-06-08T09:58:36.000Z</published>
+    <updated>2022-06-11T15:41:12.861Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="6"><center><strong>Blog On Android</strong></center></font><br>在家比在校要更好的一点是自己变得更加随心所欲了。这两天忽然想起手机上还留着Termux，于是心血来潮，何不把hexo搭建在上面试一试呢？最终是成功了，这里记录一下注意事项吧：</p><p>0、首先要下载安装Termux，这里留下一个我安装的版本：<a href="https://wwt.lanzoub.com/iJU4N063edda" target="_blank" rel="noopener">Termux</a>(密码：cv4z)。安装之后的一些基本配置可参考国光的<a href="https://www.sqlsec.com/2018/05/termux.html" target="_blank" rel="noopener">教程</a>。</p><p>1、安装需要的包<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 安装nodejs长期支持版本</span><br><span class="line">pkg install nodejs-lts</span><br><span class="line"><span class="meta">#</span> 安装git</span><br><span class="line">pkg install git</span><br><span class="line"><span class="meta">#</span> 安装hexo</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"><span class="meta">#</span> 安装hexo d命令</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p><p>2、选择合适的路径存放项目文件</p><blockquote><p>注意：在未root过的Android机上无法通过自带的文件管理直接访问termux默认的家目录</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 输入该命令创建若干映射以便于通过文件管理直接访问</span><br><span class="line">termux-setup-storage</span><br></pre></td></tr></table></figure><p>输入以上命令后，会在termux的home目录中生成storage，进入storage后使用ls -l命令和查看到具体的映射路径：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[~/storage]$ ls -l</span><br><span class="line">total 0</span><br><span class="line">lrwxrwxrwx 1 u0_a481 u0_a481 26 May 16 19:48 dcim -&gt; /storage/emulated/0/DCIM</span><br><span class="line">lrwxrwxrwx 1 u0_a481 u0_a481 30 May 16 19:48 downloads -&gt; /storage/emulated/0/Download</span><br><span class="line">lrwxrwxrwx 1 u0_a481 u0_a481 30 May 16 19:48 movies -&gt; /storage/emulated/0/Movies</span><br><span class="line">lrwxrwxrwx 1 u0_a481 u0_a481 30 May 16 19:48 music -&gt; /storage/emulated/0/Music</span><br><span class="line">lrwxrwxrwx 1 u0_a481 u0_a481 30 May 16 19:48 pictures -&gt; /storage/emulated/0/Pictures</span><br><span class="line">lrwxrwxrwx 1 u0_a481 u0_a481 22 May 16 19:48 shared -&gt; /storage/emulated/0</span><br></pre></td></tr></table></figure><p>选择好合适的位置后即可进行初始化（也可以迁移已有的项目文件至该目录）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> filename可选，可填写完整路径，生成的文件夹默认在当前目录下</span><br><span class="line">hexo init filename</span><br></pre></td></tr></table></figure><p>3、将hexo从本地部署到远端仓库：</p><blockquote><p>这里主要参考<a href="https://blog.csdn.net/guixinchn/article/details/107787660" target="_blank" rel="noopener">文章</a>，简要步骤即：新建仓库、git配置user.name和user.email、生成ssh密钥、在GitHub中添加新ssh密钥、修改本地_config.yml文件。</p></blockquote><p>4、以上完成后即可熟练使用hexo三板斧开心地写Blog了</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 新建一篇文章(xxx为.md文件名)</span><br><span class="line">hexo new xxx</span><br><span class="line"><span class="meta">#</span> 以下为"三板斧"：</span><br><span class="line">hexo clean</span><br><span class="line">hexo g  </span><br><span class="line">hexo d</span><br><span class="line"><span class="meta">#</span> 分别是清除缓存、生成静态文章、远端部署文章</span><br><span class="line"><span class="meta">#</span> 本地预览:</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>以上步骤我都亲自在手机上实践了一番，但由于我用的也是本Blog的远端仓库，所以再次编辑这篇Blog的时候因为没做PC与手机间的文件同步，也没去仓库拉代码，导致原本从手机上发出的Blog被刷没了，将来会在别的仓库重建1个Blog并将地址贴在<a href>此处</a>。</p><p>在手机上写Blog体验目前还不是很好，比如不能方便地使用在PC端可实时预览的vscode编辑器，比如执行hexo g和d命令时耗时极长。<del>但无论如何，这实现了写Blog自由（doge保命</del></p><blockquote><p>本篇主要参考B站up主<a href="https://space.bilibili.com/360649633" target="_blank" rel="noopener">frienkie</a>的专栏指路，在此十分感谢！</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;font size=&quot;6&quot;&gt;&lt;center&gt;&lt;strong&gt;Blog On Android&lt;/strong&gt;&lt;/center&gt;&lt;/font&gt;&lt;br&gt;在家比在校要更好的一点是自己变得更加随心所欲了。这两天忽然想起手机上还留着Termux，于是心血来潮，何不把hexo搭建在上
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>About Me</title>
+    <link href="http://example.com/2022/06/05/AboutMe/"/>
+    <id>http://example.com/2022/06/05/AboutMe/</id>
+    <published>2022-06-05T15:35:49.000Z</published>
+    <updated>2022-06-11T15:41:02.451Z</updated>
+    
+    <content type="html"><![CDATA[<font size="6"><center><strong>About</strong></center></font><br>I once participated in <strong>IOI</strong> for 3 months when I studied in my high school. I had to admit that it took a big impact on me —— At least, I started to develop a relatively strong interest in programming. As to why mentioning about that experience of IOI, part of the reason is that the coach and head teacher at that time gave me inspiration for the future.<br><br>It seems that I never know about myself <del>(so why you write this About😅)</del> . Observing my classmates around me in college, most of them may not that outstanding. I am an ordinary person like everyone else. On the contrary, if we observe my classmates in high school, I am that “bad” students who was not outstanding. What does these mean? I mean that my opinion of myself seems to follow the change of the enviroment. 3 or 4 years are too short. Maybe that’s why I or we get confused when facing difficulties.<br><br>From the content of my blog, you can easily guess that my major may be computer science. Congratulations! However, computer science is only my academy. I major in cyberspace security. That’s my choice after I passed the exam of changing major successfully. Like most of my classmates, I have a headache with the hardware. So I “run” away from Iot and CS —— on the other hand, I can say I don’t have more options than in the past any way, though it seems a great choice for my future.<br><br>For many subjective or objective reasons, I didn’t do great jobs on my courses, major (I mean ctf competitions, I’ve never even participated because I have almost no experience in this field) or research<del>es</del>😭(why? For example, I allocated part of my time to the orchestra and games). <em>It seems that I am the one who wants to recline(lie flat) but ends up being somewhat involute.</em> In a sence, above is my evaluation of myself.<br><br>The text above is not well organized, it’s almost a pile of rubbish🥺. There will be ample time ahead. May we still have the ability to focus and do what we need to do.<br><br>___<br><font size="2">what? why writing in English? You may know the reason from penultimate paragraph</font>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;font size=&quot;6&quot;&gt;&lt;center&gt;&lt;strong&gt;About&lt;/strong&gt;&lt;/center&gt;&lt;/font&gt;&lt;br&gt;I once participated in &lt;strong&gt;IOI&lt;/strong&gt; for 3 months when I studied in 
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Record Of Qt Develop</title>
+    <link href="http://example.com/2022/06/05/RecordOfQtDevelop/"/>
+    <id>http://example.com/2022/06/05/RecordOfQtDevelop/</id>
+    <published>2022-06-05T08:28:33.000Z</published>
+    <updated>2022-06-11T15:40:58.786Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="6"><center><strong>Qt开发记录</strong></center></font><br>关于此次开发，算是大一下半年在通信工程学院时C语言课老师最后布置的不算作业的一次任务吧。时间久远，只记得当时是看着B站一个Qt的教程，借鉴着知乎中一篇文章中的代码，在win7的一个老电脑上写了将近4周，到最后还有一点bug。  </p><p>其实是很简单的连连看游戏的开发而已，没有写出什么值得看的代码，只不过作为一次使用Qt进行的开发，我对此印象还是较深刻的 <del>（可能因为当时群里算我只有3个人去做了？🤭）</del>。  </p><p>那么代码肯定是展示不了了，早没了，不过当时在Qt上打包发布了，所以<a href="https://wwt.lanzoub.com/ib8U605xm39i" target="_blank" rel="noopener">成果</a>还是留着滴！遗憾的是，由于当时开发时候在win7平台，我还设置了固定的窗口大小，导致现在在较新的win10、win11上运行时，窗口尺寸着实是太小了点。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;font size=&quot;6&quot;&gt;&lt;center&gt;&lt;strong&gt;Qt开发记录&lt;/strong&gt;&lt;/center&gt;&lt;/font&gt;&lt;br&gt;关于此次开发，算是大一下半年在通信工程学院时C语言课老师最后布置的不算作业的一次任务吧。时间久远，只记得当时是看着B站一个Qt的教程，借鉴着知
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Record Of Android Develop</title>
+    <link href="http://example.com/2022/06/03/RecordOfAndroidDevelop/"/>
+    <id>http://example.com/2022/06/03/RecordOfAndroidDevelop/</id>
+    <published>2022-06-03T05:55:17.000Z</published>
+    <updated>2022-06-11T15:45:37.417Z</updated>
+    
+    <content type="html"><![CDATA[<font size="6"><center><strong>Android课大作业记录</strong></center></font><br>前段时间（5.28）Android软件开发结课了，作为少有的一个实打实要求出成果的实践选修课，而且老师对此还很认真的全程参与了答辩，因此决定在这儿记上一笔，同时算作本Blog里第一篇正经article。<br><br>——————————————————————————————————-<br><br>大作业的内容是完成1个app的开发，功能包括注册、登录、拍照、选择图片、根据图片显示的溶液（可能）的色彩与对应的浓度值拟合1个函数模型以预测未知浓度的溶液、模型可视化、分享等基础功能。<br><br>最先做的是<strong>注册和登录</strong>，可能是考虑这是app最开始被展示的功能吧。界面可以很容易的从网上找到其他人写的，于是“多快好省”地搬过来用了。这里遇到的小问题是需要一个后端来记录注册过的账号和密码。AS开发当燃不能再像学C语言做C课设那样简单地存到程序里或者txt文档中了，而之前课上教给的利用eclipse和mysql5作后端的实现方法又过于繁琐，并且需要另开eclipse和mysql5程序保持运行以支持功能的正常使用。受室友麻同学启发，最后采用的是SQLite，相关教程在网上也有很多，于是注册和登录功能顺利实现了。<br><br>然后做的是<strong>拍照图片</strong>和<strong>选择图片</strong>。这一部分也是直接使用了别人做好的轮子，尽管某节课上教过了如何调用相机（不过没教如何选择图库中的图片）。既然是“抄的”<del>（CV大法好）</del>，这里也不展开详说了 <del>（其实是我忘了）</del>。<br><!-- 这才是markdown的注释，在工具里只需要按住CTRL+/即可，不用去搜，不用去记！ --><br><!-- 这里的注释是想记录下两个中划线中间必须有空格或&zwnj;，上一段结尾"了"字后面是有空格的 --><br>最后搞的是<strong>拟合函数</strong>这里。关于这里，在需求文档中提到的有rgb值、灰度、线性关系、取对数等关键词。为此先用Java写了个脚本，用来提取图片里每个像素的rgb值。之前对灰度值不是很熟悉，在吴同学的启发下选取了指定区域的像素点计算了灰度值。于是将给的图片的灰度值和浓度值放在一起，先是用excel生成散点图再添加趋势线看看效果，很令人失望——线性关系肯定是别想，按照需求文档里推荐的取对数的效果也是很糟糕，而且显而易见的，由于图片少、质量差，想只根据数据得出误差小的函数是件很不现实的事情。在事情焦灼1天之后，终于在网上某在线拟合网站注意到了 <strong>“四参数方程”</strong>.由于其是用于获得免疫检测领域吸光度随抗原浓度变化的规律，某种程度上与此次大作业的需求相契合，更主要的是在那个在线拟合网站上和其他函数相比，这个函数拟合出来的效果更好。最终在网上找到了一段计算四参数的Java代码，可谓是本次大作业中最具价值的轮子了。<br><!-- 我对markdown还是不甚了解啊，这同一段两个加粗，上面那段就没事，这段就需要和两个中划线一样地处理。 --><br>最后，在胡同学的帮助下，解决了函数模型的<strong>可视化问题</strong>，具体和canvas有关，也是从网上寻找到的轮子。<br><br>——————————————————————————————————-<br><br>为人要低调，就不在此展示代码了。且本次大作业基本都是借鉴的他人的代码，本蒟蒻只是在不停地debug，让🚗跑起来 <del>（当然只有轮子是不够的）</del>。<br><br><font size="2">其实<a href="https://wwt.lanzoub.com/iZVKa05ktr5c" target="_blank" rel="noopener">代码</a>还是有的🤭</font>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;font size=&quot;6&quot;&gt;&lt;center&gt;&lt;strong&gt;Android课大作业记录&lt;/strong&gt;&lt;/center&gt;&lt;/font&gt;&lt;br&gt;前段时间（5.28）Android软件开发结课了，作为少有的一个实打实要求出成果的实践选修课，而且老师对此还很认真的全程参与了答辩，因
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>init</title>
+    <link href="http://example.com/2022/05/21/init/"/>
+    <id>http://example.com/2022/05/21/init/</id>
+    <published>2022-05-21T04:00:51.000Z</published>
+    <updated>2022-06-11T15:41:09.994Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hello hexo</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Hello hexo&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-06-12T02:53:18.423Z</updated>
+  <updated>2022-06-12T11:04:28.301Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://example.com/2022/06/12/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/"/>
     <id>http://example.com/2022/06/12/踩坑记录/</id>
     <published>2022-06-12T01:42:13.000Z</published>
-    <updated>2022-06-12T02:53:18.423Z</updated>
+    <updated>2022-06-12T11:04:28.301Z</updated>
     
-    <content type="html"><![CDATA[<p><font size="6"><center><strong>踩坑记录</strong></center></font><br>最近在频繁更换hexo主题，消耗了不少时间，不过也开了眼界，多了一点经历。在记录这次踩坑之前，先发誓到今年年底闲下来之前不再折腾hexo主题和其他内容了，之前所想的Android端的Blog项目也暂停不做。</p><p>这次更换Sakura主题后遇到的问题基本有两点：</p><h4 id="hexo-g和hexo-s时疯狂报错，本地预览都加载不出来"><a href="#hexo-g和hexo-s时疯狂报错，本地预览都加载不出来" class="headerlink" title="hexo g和hexo s时疯狂报错，本地预览都加载不出来"></a>hexo g和hexo s时疯狂报错，本地预览都加载不出来</h4><p>解决措施：参考作者和众多Sakura配置教程所说直接将下载的压缩包解压到根目录替换的做法（我行不通），我直接先删除所有自己之前所有的文件（只把文章备份了下来）然后填满Sakura主题的文件。</p><h4 id="部署到GitHub上白屏"><a href="#部署到GitHub上白屏" class="headerlink" title="部署到GitHub上白屏"></a>部署到GitHub上白屏</h4><p>起初遇到这个问题时很懵的，还以为只是网络不畅通，直到尝试科学上网之后仍然白屏，采取搜索相关问题，发现index.html确实变成了空文件。</p><p>解决措施其实不难：换了低版本的nodejs。但是我没有第一时间决定这么做，毕竟之前怎么换主题也没有因为版本问题出岔子 <del>（好像Termux那次经历暗示了我什么）</del>，这次只能说吃一堑长一智了。</p><p>刚刚又解决了上一篇Blog中markdown分级标题只显示第一个的问题，换html格式改了之后显示完全了….</p><p>持续学习下去呀！</p>]]></content>
+    <content type="html"><![CDATA[<p><font size="6"><center><strong>踩坑记录</strong></center></font><br>最近在频繁更换hexo主题，消耗了不少时间，不过也开了眼界，多了一点经历。在记录这次踩坑之前，先发誓到今年年底闲下来之前不再折腾hexo主题和其他内容了，之前所想的Android端的Blog项目也暂停不做。</p><p>这次更换Sakura主题后遇到的问题基本有两点：</p><h4 id="hexo-g和hexo-s时疯狂报错，本地预览都加载不出来"><a href="#hexo-g和hexo-s时疯狂报错，本地预览都加载不出来" class="headerlink" title="hexo g和hexo s时疯狂报错，本地预览都加载不出来"></a>hexo g和hexo s时疯狂报错，本地预览都加载不出来</h4><p>解决措施：参考作者和众多Sakura配置教程所说直接将下载的压缩包解压到根目录替换的做法（我行不通），我直接先删除所有自己之前所有的文件（只把文章备份了下来）然后填满Sakura主题的文件。</p><h4 id="部署到GitHub上白屏"><a href="#部署到GitHub上白屏" class="headerlink" title="部署到GitHub上白屏"></a>部署到GitHub上白屏</h4><p>起初遇到这个问题时很懵的，还以为只是网络不畅通，直到尝试科学上网之后仍然白屏，采取搜索相关问题，发现index.html确实变成了空文件。</p><p>解决措施其实不难：换了低版本的nodejs。但是我没有第一时间决定这么做，毕竟之前怎么换主题也没有因为版本问题出岔子 <del>（好像Termux那次经历暗示了我什么）</del>，这次只能说吃一堑长一智了。</p><p>刚刚又解决了上一篇Blog中markdown分级标题只显示第一个的问题，换html格式改了之后显示完全了….</p><p>当天傍晚更上一个blog时遇到的<del>坑</del>（涨姿势）：blog的根目录是source，根据图片文件与source的关系写好路径就可以啦(●’◡’●)</p><p>持续学习下去呀！</p>]]></content>
     
     <summary type="html">
     
@@ -42,9 +42,9 @@
     <link href="http://example.com/2022/06/09/ComputerNetworkReview/"/>
     <id>http://example.com/2022/06/09/ComputerNetworkReview/</id>
     <published>2022-06-09T15:08:59.000Z</published>
-    <updated>2022-06-12T02:50:28.108Z</updated>
+    <updated>2022-06-12T11:01:20.351Z</updated>
     
-    <content type="html"><![CDATA[<font size="6"><center><strong>计网复习</strong></center></font>  <h2>应用层</h2>  <p><strong>应用程序体系结构</strong>由应用程序研发者设计，规定了如何在各种端系统上组织该应用程序。两种主流体系结构：<font color="darkcyan">客户-服务器体系结构</font>、<font color="darkcyan">对等（P2P）体系结构</font>。</p><font color="darkcyan">客户-服务器体系结构</font>中，配备大量主机的<ins>数据中心</ins>常用于创建强大的虚拟服务器。<br><font color="darkcyan">对等（P2P）体系结构</font>最引人入胜的特性之一是它们的<ins>自拓展性</ins><br><br>运行在多个端系统上的程序是通过<ins>进程</ins>进行通信的，在两个不同端系统上的进程通过跨越计算机网络交换<ins>报文</ins>而相互通信。<br><br>进程寻址需要<ins>主机的地址(IP地址)</ins>和<ins>在目的主机中指定接收进程的标识符(端口号)</ins><br><br><strong>套接字</strong>是同一台主机内<em>应用层</em>与<em>运输层</em>之间的接口。套接字又称API。开发者通过套接字对于运输层的控制仅限于：①选择运输层协议；②设定几个参数(如最大缓存和最大报文段长度)<br><br>无论TCP还是UDP都没有提供任何加密机制，因此因特网界研制了TCP加强版：<em>安全套接字层(SSL)</em><br><br><strong><font color="darkblue">应用层协议</font></strong> 定义了运行在不同端系统上的应用程序进程如何相互传递报文——<br>·交换的报文类型<br>·各种报文类型的语法<br>·字段的语义<br>·对报文进行响应的规则<br><br><br><h3>HTTP</h3><br><br><strong>Web</strong>页面是由对象构成的。<br>多数Web页面含有一个<strong>HTML</strong>基本文件。<br><strong>Web浏览器</strong>实现了HTTP的客户端，<strong>Web服务器</strong>实现了HTTP的服务器端(常见的有Apache，微软互联网信息服务器)<br><br><font color="darkcyan">HTTP定义了</font>Web客户向Web服务器请求Web页面的方式，以及服务器向客户发送Web页面的方式。<br><br>HTTP使用<ins>TCP</ins>作为它的支撑运输协议。HTTP服务器并不保存关于客户的任何信息(但cookie保存,cookie由客户端的浏览器生成并交由Web服务器的数据库记录)，因此HTTP协议是一个<ins>无状态协议</ins>。HTTP既能够使用<ins>非持续连接</ins>，也能够使用<ins>持续连接</ins>，这在HTTP中报文的Connection首部行中得以体现。<br><br><em>非持续连接</em>的缺点：①必须为每一个请求的对象建立和维护一个全新的连接（客户和服务器均要分配TCP缓冲区和保持TCP变量，这为服务器带来了严重的负担）；②每一个对象经受两倍RTT(往返时间)的交付时延<br><br><strong>Web缓存器</strong>也叫<strong>代理服务器</strong>，是能够代表初始Web服务器来满足HTTP请求的网络实体。Web服务器拥有自己的磁盘存储空间，并在其中存储最近请求过的对象的副本。<br>Web缓存器既是客户又是服务器。Web缓存器通常由ISP购买并安装。<br>部署Web缓存器①可以大大减少对客户请求的响应时间，特别是当客户与初始服务器之间的瓶颈带宽远低于客户与Web缓存器之间的瓶颈带宽时；②能够大大减少一个机构的接入链路到因特网的通信量（通过减少通信量，可不必急于增加带宽，因此降低了费用）。<br><ins>条件GET方法</ins>作为HTTP协议中的一种机制，允许Web缓存器证实它的对象是最新的。<br><br><br><h3>SMTP、POP3、IMAP</h3><br><br>因特网电子邮件系统主要组成部分为：<strong>用户代理</strong>、<strong>邮件服务器</strong>、<strong>简单邮件传输协议(SMTP)</strong>。<br><br>示意：<br>用户代理–SMTP/HTTP–&gt;邮件服务器–SMTP–&gt;邮件服务器–POP3/IMAP/HTTP–&gt;用户代理<br><br><br><h3>DNS</h3><br><br><strong>域名系统(DNS)</strong> 的主要任务是进行<ins>主机名到IP地址转换的服务</ins>。<br><strong>DNS</strong>是①一个由分层DNS服务器实现的分布式数据库②一个使得主机能够查询分布式数据库的应用层协议。<br>DNS运行在<font color="darkcyan">UDP协议</font>之上，使用53号端口。<br><br>DNS的<ins>分布式设计方案</ins>:<br><font size="4"><strong>根DNS服务器</strong>：全世界400多个，由13个组织管理。根名字服务器提供顶级域服务器的IP地址</font><br><font size="3"><strong>顶级域(DNS)服务器</strong>：如com、org、net、edu和gov，又如uk、cn。顶级域服务器提供权威DNS服务器的IP地址</font><br><font size="2"><strong>权威DNS服务器</strong>：在因特网上具有公共可访问主机的每个组织机构必须提供公共可访问的DNS记录，一个组织机构的权威DNS服务器收藏这些IP地址记录。一种方式是自己实现，另一种方式是付费使用。</font><p>除此之外，还有<strong>本地DNS服务器</strong>。每个ISP都有一台本地DNS服务器，用户可通过访问端系统的网络状态窗口确定自身的本地DNS服务器IP地址（通常在同一局域网内）。</p><p>请求主机对本地DNS服务器发出的查询是<strong>递归查询</strong>，本地DNS服务器向根DNS服务器、顶级域服务器、权威DNS服务器发出的查询是<strong>迭代查询</strong>。</p><p><ins>为了改善时延性能并减少在因特网上到处传输的DNS报文数量</ins>，DNS广泛采用了<strong>DNS缓存技术</strong>。</p><blockquote><p>摘自黑皮书《计算机网络：自顶向下方法》，未完待续….</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<font size="6"><center><strong>计网复习</strong></center></font>  <h2>应用层</h2>  <p><strong>应用程序体系结构</strong>由应用程序研发者设计，规定了如何在各种端系统上组织该应用程序。两种主流体系结构：<font color="darkcyan">客户-服务器体系结构</font>、<font color="darkcyan">对等（P2P）体系结构</font>。</p><font color="darkcyan">客户-服务器体系结构</font>中，配备大量主机的<ins>数据中心</ins>常用于创建强大的虚拟服务器。<br><font color="darkcyan">对等（P2P）体系结构</font>最引人入胜的特性之一是它们的<ins>自拓展性</ins><br><br>运行在多个端系统上的程序是通过<ins>进程</ins>进行通信的，在两个不同端系统上的进程通过跨越计算机网络交换<ins>报文</ins>而相互通信。<br><br>进程寻址需要<ins>主机的地址(IP地址)</ins>和<ins>在目的主机中指定接收进程的标识符(端口号)</ins><br><br><strong>套接字</strong>是同一台主机内<em>应用层</em>与<em>运输层</em>之间的接口。套接字又称API。开发者通过套接字对于运输层的控制仅限于：①选择运输层协议；②设定几个参数(如最大缓存和最大报文段长度)<br><br>无论TCP还是UDP都没有提供任何加密机制，因此因特网界研制了TCP加强版：<em>安全套接字层(SSL)</em><br><br><strong><font color="darkblue">应用层协议</font></strong> 定义了运行在不同端系统上的应用程序进程如何相互传递报文——<br>·交换的报文类型<br>·各种报文类型的语法<br>·字段的语义<br>·对报文进行响应的规则<br><br><br><h3>HTTP</h3><br><br><strong>Web</strong>页面是由对象构成的。<br>多数Web页面含有一个<strong>HTML</strong>基本文件。<br><strong>Web浏览器</strong>实现了HTTP的客户端，<strong>Web服务器</strong>实现了HTTP的服务器端(常见的有Apache，微软互联网信息服务器)<br><br><font color="darkcyan">HTTP定义了</font>Web客户向Web服务器请求Web页面的方式，以及服务器向客户发送Web页面的方式。<br><br>HTTP使用<ins>TCP</ins>作为它的支撑运输协议。HTTP服务器并不保存关于客户的任何信息(但cookie保存,cookie由客户端的浏览器生成并交由Web服务器的数据库记录)，因此HTTP协议是一个<ins>无状态协议</ins>。HTTP既能够使用<ins>非持续连接</ins>，也能够使用<ins>持续连接</ins>，这在HTTP中报文的Connection首部行中得以体现。<br><br><em>非持续连接</em>的缺点：①必须为每一个请求的对象建立和维护一个全新的连接（客户和服务器均要分配TCP缓冲区和保持TCP变量，这为服务器带来了严重的负担）；②每一个对象经受两倍RTT(往返时间)的交付时延<br><br><strong>Web缓存器</strong>也叫<strong>代理服务器</strong>，是能够代表初始Web服务器来满足HTTP请求的网络实体。Web服务器拥有自己的磁盘存储空间，并在其中存储最近请求过的对象的副本。<br>Web缓存器既是客户又是服务器。Web缓存器通常由ISP购买并安装。<br>部署Web缓存器①可以大大减少对客户请求的响应时间，特别是当客户与初始服务器之间的瓶颈带宽远低于客户与Web缓存器之间的瓶颈带宽时；②能够大大减少一个机构的接入链路到因特网的通信量（通过减少通信量，可不必急于增加带宽，因此降低了费用）。<br><ins>条件GET方法</ins>作为HTTP协议中的一种机制，允许Web缓存器证实它的对象是最新的。<br><br><br><h3>SMTP、POP3、IMAP</h3><br><br>因特网电子邮件系统主要组成部分为：<strong>用户代理</strong>、<strong>邮件服务器</strong>、<strong>简单邮件传输协议(SMTP)</strong>。<br><br>示意：<br>用户代理–SMTP/HTTP–&gt;邮件服务器–SMTP–&gt;邮件服务器–POP3/IMAP/HTTP–&gt;用户代理<br><br><br><h3>DNS</h3><br><br><strong>域名系统(DNS)</strong> 的主要任务是进行<ins>主机名到IP地址转换的服务</ins>。<br><strong>DNS</strong>是①一个由分层DNS服务器实现的分布式数据库②一个使得主机能够查询分布式数据库的应用层协议。<br>DNS运行在<font color="darkcyan">UDP协议</font>之上，使用53号端口。<br><br>DNS的<ins>分布式设计方案</ins>:<br><font size="4"><strong>根DNS服务器</strong>：全世界400多个，由13个组织管理。根名字服务器提供顶级域服务器的IP地址</font><br><font size="3"><strong>顶级域(DNS)服务器</strong>：如com、org、net、edu和gov，又如uk、cn。顶级域服务器提供权威DNS服务器的IP地址</font><br><font size="2"><strong>权威DNS服务器</strong>：在因特网上具有公共可访问主机的每个组织机构必须提供公共可访问的DNS记录，一个组织机构的权威DNS服务器收藏这些IP地址记录。一种方式是自己实现，另一种方式是付费使用。</font><p>除此之外，还有<strong>本地DNS服务器</strong>。每个ISP都有一台本地DNS服务器，用户可通过访问端系统的网络状态窗口确定自身的本地DNS服务器IP地址（通常在同一局域网内）。</p><p>请求主机对本地DNS服务器发出的查询是<strong>递归查询</strong>，本地DNS服务器向根DNS服务器、顶级域服务器、权威DNS服务器发出的查询是<strong>迭代查询</strong>。</p><p><ins>为了改善时延性能并减少在因特网上到处传输的DNS报文数量</ins>，DNS广泛采用了<strong>DNS缓存技术</strong>。</p><h2>运输层</h2><p>运输层协议为运行在不同主机上的应用进程之间提供了<strong>逻辑通信</strong>功能。<br>将<em>主机间交付</em>扩展到<em>进程间交付</em>被称为<ins>运输层的多路复用</ins>与<ins>多路分解</ins>。<br>IP被称为<strong>不可靠服务</strong>，其服务模型是<strong>尽力而交付</strong>。UDP与IP是同一类型服务，而TCP不但提供<strong>可靠数据传输</strong>，还提供<strong>拥塞控制</strong>服务。<br>将运输层报文段中的数据交付到正确的套接字的工作称为<ins>多路分解</ins><br>在源主机从不同套接字中收集数据块，并为每个数据块封装上首部信息（可用于分解）从而生成报文段，然后将报文段传递到网络层，所有这些工作称为<ins>多路复用</ins></p><h3>UDP</h3><p><ins>用户数据报协议、无连接传输</ins></p><p>UDP<strong>首部</strong>仅由<ins>源端口号、目的端口号、长度、校验和</ins>四部分每部分各2字节组成，共8字节。</p><p><ins>端到端原则</ins>：因为某种功能必须基于端到端实现——与在较高级别提供这些功能的代价相比，在较低级别上设置的功能可能是冗余的或几乎没有价值的。</p><h3>可靠数据传输</h3><p>基于重传机制的可靠数据传输协议称为<strong>自动重传请求协议</strong>。</p><p>初始的<strong>停止等待协议</strong>包括了<ins>差错检测、肯定确认和否定确认</ins>。该类协议解决了比特差错问题。</p><p><strong>比特交替协议</strong>使用的技术包括<ins>差错检测、肯定确认、否定确认、序号、超时重传</ins>等，其本身仍是一个停等协议，<em>功能正确</em>但<em>性能极低</em>(拥有非常低的发送方利用率)。故采用流水线方法。</p><p><strong>滑动窗口协议</strong>又被称为<strong>回退N步协议</strong>，N被称为<strong>窗口长度</strong>，参见<a href="https://www.bilibili.com/video/BV194411h71z" target="_blank" rel="noopener">讲解视频</a>。</p><h3>TCP</h3><p><ins>传输控制协议、面向传输的协议、全双工、点对点</ins></p><p><strong>最大报文长度MSS</strong>(通常1460字节)：通常根据最初确定的由本地发送主机发送的<strong>最大链路层帧长度MTU</strong>(通常1500字节)来决定。</p><p>TCP报文段结构如下图：</p><p><img src="/img/CNR/TCPheader.jpg" alt="TCP报文段结构"></p><p><ins><strong>一个报文段的序号</strong></ins>是该报文段<strong>首</strong>字节的<ins>字节流序号</ins>。<br><ins>接收方填充到报文段中的确认号是接收方期望从发送方收到的下一字节的序号</ins>。TCP只确认流中至第一个丢失字节为止的字节，因此被称为提供<strong>累计确认</strong>。<br><strong>快速重传</strong>：一旦收到3个冗余ACK(重复确认)，TCP便不等待超时重传，而立即执行重传。</p><p>TCP为它的应用程序提供了<strong>流量控制服务</strong>以消除发送方使接收方溢出缓存的可能性。<br>TCP发送方<ins>因为IP网络的拥塞而被遏制</ins>时发送方的控制被称为<strong>拥塞控制</strong>。（注意区分拥塞控制和流量控制服务）<br>TCP通过让发送方维护一个称为<strong>接收窗口</strong>的变量来提供流量控制。</p><p><ins>快速回顾<a href="https://www.bilibili.com/video/BV1L4411a7RN" target="_blank" rel="noopener">TCP拥塞控制算法</a>:</ins></p><p><img src="/img/CNR/JamControl.jpg" alt="TCP congestion control algorithm"></p><blockquote><blockquote><p>摘自黑皮书《计算机网络：自顶向下方法》，仅供个人复习使用，未完待续….</p></blockquote></blockquote>]]></content>
     
     <summary type="html">
     
@@ -147,27 +147,6 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2022/05/21/hello-world/"/>
-    <id>http://example.com/2022/05/21/hello-world/</id>
-    <published>2022-05-21T04:00:51.000Z</published>
-    <updated>2022-06-12T01:36:45.766Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>init</title>
     <link href="http://example.com/2022/05/21/init/"/>
     <id>http://example.com/2022/05/21/init/</id>
@@ -182,6 +161,27 @@
       
         &lt;p&gt;Hello hexo&lt;/p&gt;
 
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2022/05/21/hello-world/"/>
+    <id>http://example.com/2022/05/21/hello-world/</id>
+    <published>2022-05-21T02:28:19.000Z</published>
+    <updated>2022-06-12T11:08:22.990Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
       
     
     </summary>

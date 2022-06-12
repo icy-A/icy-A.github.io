@@ -66,7 +66,7 @@
   </div>
   <a href="#" class="cd-top faa-float animated"></a>
   <section id="main-container">
-    <div class="headertop filter-dot">
+    <div class="headertop filter-dim">
   <div id="banner_wave_1"></div>
   <div id="banner_wave_2"></div>
   <figure id="centerbg" class="centerbg">
@@ -210,8 +210,34 @@
 <p>除此之外，还有<strong>本地DNS服务器</strong>。每个ISP都有一台本地DNS服务器，用户可通过访问端系统的网络状态窗口确定自身的本地DNS服务器IP地址（通常在同一局域网内）。</p>
 <p>请求主机对本地DNS服务器发出的查询是<strong>递归查询</strong>，本地DNS服务器向根DNS服务器、顶级域服务器、权威DNS服务器发出的查询是<strong>迭代查询</strong>。</p>
 <p><ins>为了改善时延性能并减少在因特网上到处传输的DNS报文数量</ins>，DNS广泛采用了<strong>DNS缓存技术</strong>。</p>
+<h2>运输层</h2>
+
+<p>运输层协议为运行在不同主机上的应用进程之间提供了<strong>逻辑通信</strong>功能。<br>将<em>主机间交付</em>扩展到<em>进程间交付</em>被称为<ins>运输层的多路复用</ins>与<ins>多路分解</ins>。<br>IP被称为<strong>不可靠服务</strong>，其服务模型是<strong>尽力而交付</strong>。UDP与IP是同一类型服务，而TCP不但提供<strong>可靠数据传输</strong>，还提供<strong>拥塞控制</strong>服务。<br>将运输层报文段中的数据交付到正确的套接字的工作称为<ins>多路分解</ins><br>在源主机从不同套接字中收集数据块，并为每个数据块封装上首部信息（可用于分解）从而生成报文段，然后将报文段传递到网络层，所有这些工作称为<ins>多路复用</ins></p>
+<h3>UDP</h3>
+
+<p><ins>用户数据报协议、无连接传输</ins></p>
+<p>UDP<strong>首部</strong>仅由<ins>源端口号、目的端口号、长度、校验和</ins>四部分每部分各2字节组成，共8字节。</p>
+<p><ins>端到端原则</ins>：因为某种功能必须基于端到端实现——与在较高级别提供这些功能的代价相比，在较低级别上设置的功能可能是冗余的或几乎没有价值的。</p>
+<h3>可靠数据传输</h3>
+
+<p>基于重传机制的可靠数据传输协议称为<strong>自动重传请求协议</strong>。</p>
+<p>初始的<strong>停止等待协议</strong>包括了<ins>差错检测、肯定确认和否定确认</ins>。该类协议解决了比特差错问题。</p>
+<p><strong>比特交替协议</strong>使用的技术包括<ins>差错检测、肯定确认、否定确认、序号、超时重传</ins>等，其本身仍是一个停等协议，<em>功能正确</em>但<em>性能极低</em>(拥有非常低的发送方利用率)。故采用流水线方法。</p>
+<p><strong>滑动窗口协议</strong>又被称为<strong>回退N步协议</strong>，N被称为<strong>窗口长度</strong>，参见<a href="https://www.bilibili.com/video/BV194411h71z" target="_blank" rel="noopener">讲解视频</a>。</p>
+<h3>TCP</h3>
+
+<p><ins>传输控制协议、面向传输的协议、全双工、点对点</ins></p>
+<p><strong>最大报文长度MSS</strong>(通常1460字节)：通常根据最初确定的由本地发送主机发送的<strong>最大链路层帧长度MTU</strong>(通常1500字节)来决定。</p>
+<p>TCP报文段结构如下图：</p>
+<p><img src="/img/CNR/TCPheader.jpg" alt="TCP报文段结构"></p>
+<p><ins><strong>一个报文段的序号</strong></ins>是该报文段<strong>首</strong>字节的<ins>字节流序号</ins>。<br><ins>接收方填充到报文段中的确认号是接收方期望从发送方收到的下一字节的序号</ins>。TCP只确认流中至第一个丢失字节为止的字节，因此被称为提供<strong>累计确认</strong>。<br><strong>快速重传</strong>：一旦收到3个冗余ACK(重复确认)，TCP便不等待超时重传，而立即执行重传。</p>
+<p>TCP为它的应用程序提供了<strong>流量控制服务</strong>以消除发送方使接收方溢出缓存的可能性。<br>TCP发送方<ins>因为IP网络的拥塞而被遏制</ins>时发送方的控制被称为<strong>拥塞控制</strong>。（注意区分拥塞控制和流量控制服务）<br>TCP通过让发送方维护一个称为<strong>接收窗口</strong>的变量来提供流量控制。</p>
+<p><ins>快速回顾<a href="https://www.bilibili.com/video/BV1L4411a7RN" target="_blank" rel="noopener">TCP拥塞控制算法</a>:</ins></p>
+<p><img src="/img/CNR/JamControl.jpg" alt="TCP congestion control algorithm"></p>
 <blockquote>
-<p>摘自黑皮书《计算机网络：自顶向下方法》，未完待续….</p>
+<blockquote>
+<p>摘自黑皮书《计算机网络：自顶向下方法》，仅供个人复习使用，未完待续….</p>
+</blockquote>
 </blockquote>
 
         </div>

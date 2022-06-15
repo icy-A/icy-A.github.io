@@ -48,7 +48,7 @@
   /*End of Initial Variables*/
   </script>
   <script type="text/javascript">
-  var bg = "https://mrpig.eu.org/1654923602157606.png,https://mrpig.eu.org/1648800000574509.png,https://mrpig.eu.org/1652090403691200.png,https://mrpig.eu.org/1649714404172210.png,https://mrpig.eu.org/1630335603385241.png,https://mrpig.eu.org/1641888002748600.png,https://mrpig.eu.org/1649736003932900.png,https://mrpig.eu.org/1644825603379804.png".split(",");
+  var bg = "https://mrpig.eu.org/1654923602157606.png,https://mrpig.eu.org/1648800000574509.png,https://mrpig.eu.org/1652090403691200.png,https://mrpig.eu.org/1649714404172210.png,https://mrpig.eu.org/1630335603385241.png,https://mrpig.eu.org/1641888002748600.png,https://mrpig.eu.org/1649736003932900.png,https://mrpig.eu.org/1644825603379804.png,/img/BlogCover/random3.png,/img/BlogCover/random4.png,/img/BlogCover/桃樱.png,/img/BlogCover/青行灯.png,".split(",");
   var bgindex = Math.floor(Math.random()*bg.length);
   if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
     alert('朋友，IE浏览器未适配哦~');
@@ -234,11 +234,72 @@
 <p>TCP为它的应用程序提供了<strong>流量控制服务</strong>以消除发送方使接收方溢出缓存的可能性。<br>TCP发送方<ins>因为IP网络的拥塞而被遏制</ins>时发送方的控制被称为<strong>拥塞控制</strong>。（注意区分拥塞控制和流量控制服务）<br>TCP通过让发送方维护一个称为<strong>接收窗口</strong>的变量来提供流量控制。</p>
 <p><ins>快速回顾<a href="https://www.bilibili.com/video/BV1L4411a7RN" target="_blank" rel="noopener">TCP拥塞控制算法</a>:</ins></p>
 <p><img src="/img/CNR/JamControl.jpg" alt="TCP congestion control algorithm"></p>
-<blockquote>
-<blockquote>
-<p>摘自黑皮书《计算机网络：自顶向下方法》，仅供个人复习使用，未完待续….</p>
-</blockquote>
-</blockquote>
+<h2>网络层</h2>
+
+<h3>数据平面——转发</h3>
+
+<p><strong>转发</strong>是指将分组从一个输入链路接口转移到适当的输出链路接口的路由器的本地动作。</p>
+<p><strong>网络服务模型</strong>定义了分组在发送端与接收端之间的端到端运输特性：</p>
+<ol>
+<li>确保交付</li>
+<li>具有时延上界的确保交付</li>
+<li>有序分组交付</li>
+<li>确保最小带宽</li>
+<li>安全性</li>
+</ol>
+<p>但需注意网络层这种单一的服务是尽力而为服务。</p>
+<p>某些分组交换机称为<strong>链路层交换机</strong>，基于链路层帧中的字段值做出转发决定，是链路层设备；<br>其他分组交换机称为<strong>路由器</strong>，基于网络层数据报中的首部字段值做出转发决定，是网络层设备。</p>
+<p>转发可分为基于目的地转发和通用转发。</p>
+<p>当有多个匹配时，路由器使用<ins>最长前缀匹配规则</ins>，即在表中寻找最长的匹配项，并向与最长前缀匹配相关联的链路接口转发分组。</p>
+<p><ins>交换</ins>分为 经内存交换、经总线交换、经互联网络交换。</p>
+<p>一些常见的分组调度策略：  </p>
+<ol>
+<li>先进先出</li>
+<li>优先权排队 <ul>
+<li>当选择一个分组传输时，优先权排队规则将从队列为<em>非空</em>的最高优先权类中传输一个分组；</li>
+<li>在同一个优先权类的分组之间的选择通常以先进先出方式完成；</li>
+<li>在非抢占式优先权排队规则下，一旦分组开始传输，就不能被打断</li>
+</ul>
+</li>
+<li>循环和加权公平排队<ul>
+<li>在循环排队规则下，分组像使用优先权排队那样被分类，但类之间不存在严格的服务优先权，循环调度器在这些类之间轮流提供服务；</li>
+<li>一个所谓的<em>保持工作排队</em>规则在有分组排队等待传输时，不允许链路保持空闲，当寻找给定类的分组但是没有找到时，保持工作的循环规则将立即检查循环队列中的下一个类；</li>
+<li>加权公平排队和循环排队的不同之处在于，每个类在任何时间间隔内可能收到不同数量的服务，该排队按权重使各分组仍能分配到公平的带宽。加权公平排队也遵循保持工作排队规则。</li>
+</ul>
+</li>
+</ol>
+<h4>IPv4</h4>
+
+<p>IPv4数据报格式：<br><img src="/img/CNR/IPv4.jpg" alt="IPv4数据报格式"></p>
+<p><ins>版本(版本号)</ins>：这4bit规定了数据报的IP协议版本，用以使路由器确定如何解释IP数据报的剩余部分<br><ins>首部长度</ins>：IPv4数据报因为包含选项字段，故该字段用以指出IP数据报中载荷(运输层报文段)实际开始的地方。大多数IP数据报不包含选项，IP一般具有20字节长的首部<br><ins>服务类型</ins>：区分不同的IP数据报(如要求低时延、高吞吐量、可靠性的数据报)，例如实时数据报(IP电话)与非实时流量(FTP)<br><ins>数据报长度</ins>：指IP数据报的总长度(首部+数据)，该字段所体现的IP数据报能容纳的最大长度受限于以太网帧的载荷字段(该字段16bit,能容许最大65535字节,而数据报很少有超过1500字节)<br><ins>标识、标志、片偏移</ins>：与IP分片有关，新版IPv6不允许路由器对分组分片<br><ins>寿命</ins>：TTL(Time-To-Live)用以确保数据报不会永远在网络中循环——每当一台路由器处理数据报时，数据报该字段-1，当减至0时，该数据报必须被丢弃<br><ins>协议</ins>：指高层协议，指示了IP数据报的数据部分应该交给哪个特定的运输层协议<br><ins>首部校验和</ins>：路由器对每个收到的IP数据报检验首部校验和，并且因TTL字段的改变，路由器重新计算校验和并更改该字段。该字段是影响性能的字段<br><ins>数据</ins>：该字段不仅能承载运输层报文，还能用以承载ICMP报文</p>
+<ul>
+<li>关于IPv4的数据分片：<br>一个链路层所能承载的最大数据量叫<strong>最大传送单元(MTU)</strong>，链路层的MTU严格限制着IP数据报的长度，而由于不同的链路层协议具有不同的MTU，因此需在端系统中对数据报进行分片并在接收时重新组装。<ul>
+<li>生成一个数据报时，发送主机为该数据报设置源和目的地址的同时贴上<em>标识号</em>，发送主机为它发送的每个数据报的标识号+1</li>
+<li>为了让目的主机相信收到了初始数据报的最后一个片，除了最后一个片的<em>标志比特</em>设为0外，其他所有片的<em>标志比特</em>均被设为1</li>
+<li>为了让目的主机确认是否丢失了一个片(且能按正确的顺序重新组装片)，使用<em>偏移字段</em>指定该片应放在初始IP数据报的哪个位置</li>
+</ul>
+</li>
+</ul>
+<h4>寻址</h4>
+
+<p><strong>动态主机配置协议(DHCP)</strong> 具有将主机连接进一个网络的网络相关方面的自动能力，又被称为<strong>即插即用协议</strong>或<strong>零配置协议</strong>。<br>DHCP协议使某主机每次与网络连接时能得到 一个相同的IP地址/临时的IP地址，通常还包括它的子网掩码、第一跳路由器(网关)、本地DNS服务器。<br>DHCP是一个客户-服务器协议。</p>
+<p>DHCP工作的4步骤：</p>
+<ol>
+<li>客户发送<strong>DHCP发现报文</strong>，<ins>使用广播地址255.255.255.0 并将本机地址设为0.0.0.0</ins></li>
+<li>DHCP服务器收到DHCP发现报文后，用<strong>DHCP提供报文</strong>响应，<ins>仍使用广播地址255.255.255.255</ins>(因为子网中可能存在多个DHCP服务器)，提供报文中包含有发现报文的事务ID、向客户推荐的IP地址、网络掩码以及IP地址租用期</li>
+<li>客户发送<strong>DHCP请求报文</strong>以响应，回显配置的参数</li>
+<li>服务器发送<strong>DHCP ACK报文</strong>以对请求报文响应，证实所要求的参数</li>
+</ol>
+<p><strong>网络地址转换(NAT)</strong>通过维护一张NAT转换表，利用NAT路由器的端口进行主机寻址，解决了IPv4地址枯竭的问题。</p>
+<h4>IPv6</h4>
+
+<p>IPv6数据报格式：<br><img src="/img/CNR/IPv6.png" alt="IPv6数据报格式"></p>
+<p><ins>版本</ins>：该值为6(但IPv4该值不为4)<br><ins>流量类型</ins>：与IPv4的TOS字段类似<br><ins>流标签</ins>：20bit字段用于标识一条数据报的流，能够对一条流中的某些数据报给出优先权<br><ins>有效载荷长度</ins>：16bit无符号整数，表示跟在定长40字节首部后面的字节数量<br><ins>下一个首部</ins>：高层协议TCP/UPD等，与IPv4首部中协议字段相同的值<br><ins>跳限制</ins>：TTL，与IPv4协议中字段类似</p>
+<p>IPv6不再保留分片/重新组装、首部校验和、选项。<br>IPv6兼容IPv4，但IPv4设备无法处理IPv6数据报</p>
+<p>从IPv4向IPv6迁移的一种方式是<strong>建隧道</strong>：将IPv6报文作为IPv4数据报中的数据，以经过IPv6站点中间的IPv4站点</p>
+<ul>
+<li>摘自黑皮书《计算机网络：自顶向下方法》，仅供个人复习使用，未完待续….</li>
+</ul>
 
         </div>
         <!-- .entry-content -->
@@ -272,7 +333,7 @@
           
             <a href="/2022/06/12/踩坑记录/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://mrpig.eu.org/1644991202536234.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://mrpig.eu.org/1644991202536234.png">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="/img/BlogCover/random2.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="/img/BlogCover/random2.png">
               </div>
               <span class="label">
               Previous Post</span>
@@ -290,7 +351,7 @@
           
             <a href="/2022/06/08/BlogOnAndroid/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://mrpig.eu.org/1644991202536234.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://mrpig.eu.org/1644991202536234.png">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="/img/BlogCover/3.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="/img/BlogCover/3.jpg">
               </div>
               <span class="label">
               Next Post</span>

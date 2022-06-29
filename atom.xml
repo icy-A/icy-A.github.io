@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-06-15T08:59:10.491Z</updated>
+  <updated>2022-06-29T15:27:00.147Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OSReview</title>
+    <link href="http://example.com/2022/06/27/OSReview/"/>
+    <id>http://example.com/2022/06/27/OSReview/</id>
+    <published>2022-06-27T02:42:33.000Z</published>
+    <updated>2022-06-29T15:27:00.147Z</updated>
+    
+    <content type="html"><![CDATA[<font size="6"><center><strong>操作系统复习</strong></center></font> <h2>死锁</h2><p><ins>定义</ins>：一组进程中的每个进程均等待此组进程中其他进程所占有的、因而永远无法得到的资源，这种现象称为进程死锁，简称死锁。</p><p><ins>类型</ins>：</p><ul><li>竞争资源</li><li>进程间通信 </li><li>其他</li></ul><p><ins>条件</ins>：<font color="darkcyan">资源独占、不可剥夺、保持申请、循环等待</font></p><ul><li>资源独占：一个资源在同一时刻只能被分配给一个进程。如果某一进程申请某一资源，而该资源正在被另外的某一进程所占有，则申请者需要等待，直到占有者释放该资源。</li><li>不可剥夺：资源申请者不能强行地从资源占有者手中夺取资源，即资源只能由其占有者在使用完后自愿地释放。</li><li>保持申请：进程在占有部分资源后还可以申请新的资源，而且在申请新资源的时候并不释放它已经占有的资源。</li><li>循环等待：存在一个进程等待序列{p~1~,p~2~,…,p~n~}，其中p~1~等待p~2~所占有的某一资源，p~2~等待p~3~占有的某一资源……p~n~等待p~1~所占有的某一资源。</li></ul><h3>死锁的处理</h3><h4>不让死锁发生</h4><p><strong>静态：死锁预防</strong></p><ul><li>所谓静态，是指对于进程有关资源的活动按某种协议加以限制，如果所有进程都遵守此协议，即可保证不发生死锁</li></ul><p><ins>预先分配策略</ins>：</p><p>采用<em>预先分配策略</em>：进程在运行前一次性地向系统申请它所需要的全部资源。如果系统当前不能满足进程的全部资源请求，则不分配资源，此进程暂不投入运行。如果系统当前能够满足进程的全部资源请求，则一次性地将所申请的资源全部分配给申请进程。<br>因<ins>破坏了</ins><strong>保持申请</strong>这一死锁的必要条件，故不会有死锁发生。</p><p>预先分配策略的<strong>缺点</strong>：</p><ol><li>资源利用率低。进程运行前申请所需全部资源，其中部分资源可能仅一段时间使用</li><li>进程在运行前可能并不知道它所需要的全部资源。</li></ol><p><ins>有序分配策略</ins>：</p><p>事先将所有资源类完全排序，规定进程必须按照资源编号由小到大的次序申请资源。<br>使用这种预防死锁策略时，应仔细考虑资源类的编号。为了提高资源利用率，<em>通常按照大多数进程使用资源的次序来给资源类编号</em>，即先使用者排在前面，后使用者排在后面。</p><p>有序分配策略的<strong>缺点</strong>：</p><ol><li>给资源类一个合理的编号比较困难</li><li>按编号申请资源增加了资源使用者(进程)的负担</li><li>如果有进程违反了申请规定，仍有可能死锁</li><li>为了保证按编号申请的次序，暂不需要的资源也可能需要提前申请，增加了进程对于资源的占有时间</li></ol><p><strong>动态：死锁避免</strong></p><ul><li>所谓动态，是指对于进程有关资源的申请命令加以实时检测，拒绝不安全的资源请求命令，以保证死锁不会发生</li></ul><p>安全状态是没有死锁的状态，因为当任意进程需要的资源数量超过当前系统剩余的资源量，它可以等待直到所有进程都执行完并释放它们所有的资源后获得它所需要的全部资源。<br>不安全状态不一定是死锁状态。</p><p><strong>避免死锁的银行家算法</strong>：</p><ul><li>n：进程的总数； m：资源类的总数</li><li>Available[m]：当前各类资源中资源实例的数量</li><li>Claim[n][m]：每个进程所需各类资源的资源实例最大量</li><li>Allocation[n][m]：每个进程占有各资源类中的资源实例的数量，初始为0</li><li>Need[n][m]：每个进程尚需各个资源类中的资源实例的数量</li><li>Request[n][m]：每个进程当前申请各个资源类中的资源实例的数量</li><li>Work[m]：工作变量，记录可用资源</li><li>Finish[n]：工作变量，记录进程是否可以执行完</li></ul><p><ins>银行家算法——资源分配算法</ins></p><ol><li>如果Request≤Need，转第2步，否则带错返回(申请资源量超过所声明/需最大资源需求量)</li><li>如果Request≤Available，转第3步，否则无法满足本次申请，<font color="purple">进程等待</font></li><li><font color="orange">假设</font>系统分配资源，则：<ul><li>Available  = Available - Request；</li><li>Allocation = Allocation + Request；</li><li>Need       = Need - Request；</li></ul></li><li>如果上述分配导致的新状态是安全的，转第5步，否则取消分配(注意第3步是假设,实际4作为条件在前)，<font color="purple">进程等待</font></li><li>确认分配，进程继续执行</li></ol><p><ins>银行家算法——安全检测算法</ins></p><ol><li>Work=Available；Finish=false；</li><li>寻找满足 Finish=false &amp;&amp; Need≤Work 的进程，若不存在，转第4步</li><li>Work      = Work + Allocation[i];<br>Finish[i] = true;<br>(i为第2步满足条件的进程)<br>转第2步</li><li>如果对于所有进程，都有Finish=true，则系统处于安全状态，否则系统处于不安全状态</li></ol><p>银行家算法的<font color="green">时间复杂度</font>为O(mn^2^)，借助图论可将其复杂度降至O(n^2^)。</p><p>银行家算法的<em>缺陷</em>：</p><ol><li>进程运行前需要申明所需资源的最大量，这对进程是一个负担，有时是困难的</li><li>n个进程要事先已知，实际应用中进程是动态创建动态撤销的</li><li>运行银行家算法进行安全检测所花费的时间代价比较大</li></ol><h4>检测出死锁并消除</h4><p>动态死锁检测策略 以及 动态死锁恢复策略</p><ul><li>摘自《计算机操作系统教程》，仅供个人复习使用，未完待续…</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;font size=&quot;6&quot;&gt;&lt;center&gt;&lt;strong&gt;操作系统复习&lt;/strong&gt;&lt;/center&gt;&lt;/font&gt; 
+
+&lt;h2&gt;死锁&lt;/h2&gt;
+
+&lt;p&gt;&lt;ins&gt;定义&lt;/ins&gt;：一组进程中的每个进程均等待此组进程中其他进程所占有的、因而永远无法得到的资源，这种现象称为
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>踩坑记录</title>

@@ -202,22 +202,22 @@
         <div class="entry-content">
           <p><font size="6"><center><strong>Blog On Android</strong></center></font><br>在家比在校要更好的一点是自己变得更加随心所欲了。这两天忽然想起手机上还留着Termux，于是心血来潮，何不把hexo搭建在上面试一试呢？最终是成功了，这里记录一下注意事项吧：</p>
 <p>0、首先要下载安装Termux，这里留下一个我安装的版本：<a href="https://wwt.lanzoub.com/iJU4N063edda" target="_blank" rel="noopener">Termux</a>(密码：cv4z)。安装之后的一些基本配置可参考国光的<a href="https://www.sqlsec.com/2018/05/termux.html" target="_blank" rel="noopener">教程</a>。</p>
-<p>1、安装需要的包<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 安装nodejs长期支持版本</span><br><span class="line">pkg install nodejs-lts</span><br><span class="line"><span class="meta">#</span> 安装git</span><br><span class="line">pkg install git</span><br><span class="line"><span class="meta">#</span> 安装hexo</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"><span class="meta">#</span> 安装hexo d命令</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>1、安装需要的包<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装nodejs长期支持版本</span></span><br><span class="line">pkg install nodejs-lts</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装git</span></span><br><span class="line">pkg install git</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装hexo</span></span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装hexo d命令</span></span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
 <p>2、选择合适的路径存放项目文件</p>
 <blockquote>
 <p>注意：在未root过的Android机上无法通过自带的文件管理直接访问termux默认的家目录</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 输入该命令创建若干映射以便于通过文件管理直接访问</span><br><span class="line">termux-setup-storage</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 输入该命令创建若干映射以便于通过文件管理直接访问</span></span><br><span class="line">termux-setup-storage</span><br></pre></td></tr></table></figure>
 <p>输入以上命令后，会在termux的home目录中生成storage，进入storage后使用ls -l命令和查看到具体的映射路径：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[~/storage]$ ls -l</span><br><span class="line">total 0</span><br><span class="line">lrwxrwxrwx 1 u0_a481 u0_a481 26 May 16 19:48 dcim -&gt; /storage/emulated/0/DCIM</span><br><span class="line">lrwxrwxrwx 1 u0_a481 u0_a481 30 May 16 19:48 downloads -&gt; /storage/emulated/0/Download</span><br><span class="line">lrwxrwxrwx 1 u0_a481 u0_a481 30 May 16 19:48 movies -&gt; /storage/emulated/0/Movies</span><br><span class="line">lrwxrwxrwx 1 u0_a481 u0_a481 30 May 16 19:48 music -&gt; /storage/emulated/0/Music</span><br><span class="line">lrwxrwxrwx 1 u0_a481 u0_a481 30 May 16 19:48 pictures -&gt; /storage/emulated/0/Pictures</span><br><span class="line">lrwxrwxrwx 1 u0_a481 u0_a481 22 May 16 19:48 shared -&gt; /storage/emulated/0</span><br></pre></td></tr></table></figure>
 <p>选择好合适的位置后即可进行初始化（也可以迁移已有的项目文件至该目录）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> filename可选，可填写完整路径，生成的文件夹默认在当前目录下</span><br><span class="line">hexo init filename</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> filename可选，可填写完整路径，生成的文件夹默认在当前目录下</span></span><br><span class="line">hexo init filename</span><br></pre></td></tr></table></figure>
 <p>3、将hexo从本地部署到远端仓库：</p>
 <blockquote>
 <p>这里主要参考<a href="https://blog.csdn.net/guixinchn/article/details/107787660" target="_blank" rel="noopener">文章</a>，简要步骤即：新建仓库、git配置user.name和user.email、生成ssh密钥、在GitHub中添加新ssh密钥、修改本地_config.yml文件。</p>
 </blockquote>
 <p>4、以上完成后即可熟练使用hexo三板斧开心地写Blog了</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 新建一篇文章(xxx为.md文件名)</span><br><span class="line">hexo new xxx</span><br><span class="line"><span class="meta">#</span> 以下为"三板斧"：</span><br><span class="line">hexo clean</span><br><span class="line">hexo g  </span><br><span class="line">hexo d</span><br><span class="line"><span class="meta">#</span> 分别是清除缓存、生成静态文章、远端部署文章</span><br><span class="line"><span class="meta">#</span> 本地预览:</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 新建一篇文章(xxx为.md文件名)</span></span><br><span class="line">hexo new xxx</span><br><span class="line"><span class="meta">#</span><span class="bash"> 以下为<span class="string">"三板斧"</span>：</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo g  </span><br><span class="line">hexo d</span><br><span class="line"><span class="meta">#</span><span class="bash"> 分别是清除缓存、生成静态文章、远端部署文章</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 本地预览:</span></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <p>以上步骤我都亲自在手机上实践了一番，但由于我用的也是本Blog的远端仓库，所以再次编辑这篇Blog的时候因为没做PC与手机间的文件同步，也没去仓库拉代码，导致原本从手机上发出的Blog被刷没了，将来会在别的仓库重建1个Blog并将地址贴在<a href>此处</a>。</p>
 <p>在手机上写Blog体验目前还不是很好，比如不能方便地使用在PC端可实时预览的vscode编辑器，比如执行hexo g和d命令时耗时极长。<del>但无论如何，这实现了写Blog自由（doge保命</del></p>
 <blockquote>
@@ -272,15 +272,15 @@
           
             <div class="post-nepre half next">
           
-            <a href="/2022/06/05/AboutMe/" rel="next">
+            <a href="/2022/06/05/RecordOfQtDevelop/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="/img/BlogCover/15.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="/img/BlogCover/15.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="/img/BlogCover/10.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="/img/BlogCover/10.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                About Me</h3>
+                Record Of Qt Develop</h3>
                 <hr>
               </div>
             </a>
